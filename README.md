@@ -7,7 +7,11 @@ Die Aufgaben-App zeigt Hausaufgaben, angekündigte Tests, Hinweise der Lehrkräf
 - Läuft nur auf deinem Windows-PC, nicht in einer Cloud.
 - Liest nur. Bei beste.schule ändert die App nichts.
 - Verbindet sich ausschließlich mit beste.schule. Keine Werbung, keine Nutzungsstatistik.
-- Kostenlos und quelloffen.
+- Kostenlos für nicht-kommerzielle Nutzung, der Quellcode ist einsehbar.
+
+<a href="https://github.com/Sunniiii/schuluebersicht/releases/latest"><img src="docs/bilder/download.png" alt="Neueste Version für Windows herunterladen" width="380"></a>
+
+Auf der Download-Seite unten unter **Assets** die Datei `Aufgaben-App-<Version>-windows-x64.zip` anklicken. Vor dem Entpacken bitte [Installieren und starten](#installieren-und-starten) lesen.
 
 ![Übersicht der Aufgaben-App mit erfundenen Beispieldaten](docs/bilder/uebersicht.png)
 
@@ -20,7 +24,7 @@ Die Aufgaben-App zeigt Hausaufgaben, angekündigte Tests, Hinweise der Lehrkräf
 
 ## Was du herunterlädst
 
-Auf der Seite [Releases](../../releases) liegen zu jeder Version:
+Auf der Seite [Releases](https://github.com/Sunniiii/schuluebersicht/releases) liegen zu jeder Version:
 
 | Datei | Wofür |
 |---|---|
@@ -46,7 +50,7 @@ Warum eine `.cmd` und keine `.exe`? Eine eigene `.exe` ohne kostenpflichtiges Ze
 
 ## Installieren und starten
 
-1. Das Windows-ZIP von der Seite [Releases](../../releases) herunterladen. Nur von dort laden; zum Weitergeben den Link schicken, nicht die Datei.
+1. Die Seite [neueste Version](https://github.com/Sunniiii/schuluebersicht/releases/latest) öffnen und unten unter **Assets** auf `Aufgaben-App-<Version>-windows-x64.zip` klicken. Die anderen Dateien brauchst du nicht. Nur von dort laden; zum Weitergeben den Link schicken, nicht die Datei.
 2. **Vor dem Entpacken:** Rechtsklick auf die ZIP-Datei → **Eigenschaften** → unten Haken bei **Zulassen** → **OK**. Ohne diesen Schritt blockiert Windows die Startdatei.
 3. Das ZIP in einen eigenen Ordner entpacken, zum Beispiel unter **Dokumente**.
 4. **Aufgaben-App starten.cmd** doppelklicken. Ein schwarzes Fenster erscheint kurz, dann öffnet sich der Browser mit der Einrichtung. Dabei entstehen Verknüpfungen **Aufgaben-App** auf dem Desktop und im Startmenü; künftig startest du die App darüber.
@@ -136,7 +140,13 @@ Einträge, deren Unterrichtsstunde mehr als 30 Tage zurückliegt, ruft die App n
 
 ## Lizenz
 
-Die Aufgaben-App ist freie Software unter der [GNU General Public License Version 3](LICENSE). Sie wird ohne jede Gewährleistung bereitgestellt. Die beigelegte Node.js-Laufzeit und die verwendeten Bibliotheken stehen unter eigenen Lizenzen; die Texte liegen als `THIRD-PARTY-NOTICES.txt` im Paket.
+Die Aufgaben-App steht unter der [PolyForm Noncommercial License 1.0.0](LICENSE). Kurz gesagt:
+
+- **Erlaubt:** nutzen, weitergeben und verändern für nicht-kommerzielle Zwecke, zum Beispiel privat in der Familie, in Schulen oder in gemeinnützigen Einrichtungen.
+- **Nicht erlaubt:** kommerzielle Nutzung, etwa die App zu verkaufen oder in einem bezahlten Angebot oder für ein Unternehmen einzusetzen.
+- **Bei der Weitergabe:** den Lizenztext und die Zeile „Required Notice“ aus der Datei [LICENSE](LICENSE) mitgeben.
+
+Verbindlich ist der englische Lizenztext. Die App wird ohne jede Gewährleistung bereitgestellt. Die beigelegte Node.js-Laufzeit und die verwendeten Bibliotheken stehen unter eigenen Lizenzen; die Texte liegen als `THIRD-PARTY-NOTICES.txt` im Paket.
 
 Die App ist kein offizielles Angebot von beste.schule und wird von dessen Betreiber weder geprüft noch unterstützt.
 
@@ -146,4 +156,4 @@ Bitte nicht öffentlich als Issue, sondern wie in [SECURITY.md](SECURITY.md) bes
 
 ## Quellcode
 
-Den Quellcode jeder Version gibt es auf der Seite [Releases](../../releases) als `Aufgaben-App-<Version>-source.zip`. Aufbau, Build und Tests beschreibt die darin enthaltene `ENTWICKLUNG.md`.
+Den Quellcode jeder Version gibt es auf der Seite [Releases](https://github.com/Sunniiii/schuluebersicht/releases) als `Aufgaben-App-<Version>-source.zip`. Aufbau, Build und Tests beschreibt die darin enthaltene `ENTWICKLUNG.md`.
