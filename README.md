@@ -6,7 +6,7 @@ Die Aufgaben-App zeigt Hausaufgaben, angekündigte Tests, Hinweise der Lehrkräf
 
 - Läuft nur auf deinem Windows-PC, nicht in einer Cloud.
 - Liest nur. Bei beste.schule ändert die App nichts.
-- Verbindet sich ausschließlich mit beste.schule. Keine Werbung, keine Nutzungsstatistik.
+- Verbindet sich nur mit beste.schule und einmal am Tag mit GitHub, um nach einer neuen Version zu schauen. Keine Werbung, keine Nutzungsstatistik.
 - Kostenlos für nicht-kommerzielle Nutzung, der Quellcode ist einsehbar.
 
 <a href="https://github.com/Sunniiii/schuluebersicht/releases/latest"><img src="docs/bilder/download.png" alt="Neueste Version für Windows herunterladen" width="380"></a>
@@ -53,49 +53,39 @@ Warum eine `.cmd` und keine `.exe`? Eine eigene `.exe` ohne kostenpflichtiges Ze
 1. Die Seite [neueste Version](https://github.com/Sunniiii/schuluebersicht/releases/latest) öffnen und unten unter **Assets** auf `Aufgaben-App-<Version>-windows-x64.zip` klicken. Die anderen Dateien brauchst du nicht. Nur von dort laden; zum Weitergeben den Link schicken, nicht die Datei.
 2. **Vor dem Entpacken:** Rechtsklick auf die ZIP-Datei → **Eigenschaften** → unten Haken bei **Zulassen** → **OK**. Ohne diesen Schritt blockiert Windows die Startdatei.
 3. Das ZIP in einen eigenen Ordner entpacken, zum Beispiel unter **Dokumente**.
-4. **Aufgaben-App starten.cmd** doppelklicken. Ein schwarzes Fenster erscheint kurz, dann öffnet sich der Browser mit der Einrichtung. Dabei entstehen Verknüpfungen **Aufgaben-App** auf dem Desktop und im Startmenü; künftig startest du die App darüber.
+4. **Aufgaben-App starten.cmd** doppelklicken. Ein schwarzes Fenster erscheint kurz, dann öffnet sich die App im Browser. Dabei entstehen Verknüpfungen **Aufgaben-App** auf dem Desktop und im Startmenü; künftig startest du die App darüber.
 
-Solange die App läuft, steht ein Symbol im Infobereich unten rechts (eventuell unter dem Pfeil ^). Darüber öffnest oder beendest du die App.
+Solange die App läuft, steht unten rechts neben der Uhr ein blaues Symbol mit weißem Haken (eventuell unter dem Pfeil ^). Daran siehst du, dass die App an ist. Doppelklick darauf öffnet sie, Rechtsklick → **Beenden** schließt sie.
 
 ## Einrichtung
 
-Beim ersten Start fragt die App nach zwei Angaben aus beste.schule und zeigt dort dieselbe Anleitung. Die Bilder sind nachgezeichnet; die Oberfläche von beste.schule kann leicht abweichen.
+Die App braucht einmal einen Schlüssel von beste.schule. Dieser Schlüssel heißt dort **Token**. Dein Kind findet die App damit selbst. Die Bilder sind nachgezeichnet; bei beste.schule kann es etwas anders aussehen.
 
-### 1. Schüler-ID finden
-
-Bei [beste.schule](https://beste.schule) anmelden und die Notenübersicht des Kindes öffnen. In der Adresszeile des Browsers steht dann zum Beispiel `beste.schule/students/123456/grades`. Die Zahl zwischen `/students/` und `/grades` ist die Schüler-ID.
-
-<img src="docs/bilder/schueler-id.png" alt="Adresszeile mit hervorgehobener Schüler-ID 123456" width="520">
-
-### 2. API-Token erstellen
-
-Mit dem Token darf die App die Daten bei beste.schule lesen. Es gehört zu deinem Benutzerkonto und kann für mehrere Kinder gelten.
-
-1. Bei beste.schule oben rechts auf deinen Namen klicken und **Benutzerkonto** wählen.
+1. Öffne [beste.schule](https://beste.schule). Klicke oben rechts auf deinen Namen. Klicke dann auf **Benutzerkonto**.
 
    <img src="docs/bilder/konto-menue.png" alt="Menü unter dem eigenen Namen mit hervorgehobenem Eintrag Benutzerkonto" width="520">
 
-2. Links **API** anklicken. Nach unten zu **Personal Access Tokens** scrollen, nicht **OAuth-Clients** verwenden. Auf **+ Neuen Token erstellen** klicken.
+2. Klicke links auf **API**. Klicke dann auf **+ Neuen Token erstellen**.
 
    <img src="docs/bilder/api-seite.png" alt="Benutzerkonto mit hervorgehobenem Reiter API und Schaltfläche Neuen Token erstellen" width="520">
 
-3. Bei **Name** zum Beispiel `Aufgaben-App` eintragen. Unter **OPENID CONNECT** alle Kästchen leer lassen. Unter **API-ZUGRIFF** nur **Lesezugriff auf die API** ankreuzen, **Schreibzugriff auf die API** leer lassen. Unten rechts auf **Erstellen** klicken.
+3. Schreib bei **Name** zum Beispiel `Aufgaben-App`. Setz nur bei **Lesezugriff auf die API** einen Haken. Klicke auf **Erstellen**.
 
    <img src="docs/bilder/token-auswahl.png" alt="Fenster zum Erstellen des Tokens, nur Lesezugriff auf die API ist angekreuzt" width="520">
 
-4. Das Token wird nur **einmal** angezeigt. Sofort vollständig kopieren.
+4. Jetzt siehst du eine lange Reihe aus Buchstaben und Zahlen. Das ist dein Token. Kopiere es. Du siehst es nur dieses eine Mal.
 
    <img src="docs/bilder/token-kopieren.png" alt="Angezeigtes Token, hervorgehoben zum Kopieren" width="520">
 
-> Das Token wie ein Passwort behandeln und nicht weitergeben. Nicht das beste.schule-Passwort oder den Zugangsschlüssel der Schule eintragen.
+5. Klicke in der Aufgaben-App oben rechts auf **Einstellungen**. Füge das Token ein. Klicke auf **Hinzufügen**.
 
-### 3. In der App eintragen
+   <img src="docs/bilder/app-formular.png" alt="Einstellungen der App: Kind hinzufügen mit dem Feld API-Token" width="520">
 
-Schüler-ID und Token in das Einrichtungsformular einfügen und **Speichern & starten** klicken. Die App prüft die Angaben sofort bei beste.schule und meldet, wenn etwas nicht passt.
+**Fertig!** Jetzt siehst du die Hausaufgaben. Hast du mehrere Kinder, fragt die App, welche sie zeigen soll.
 
-<img src="docs/bilder/app-formular.png" alt="Einrichtungsformular der App mit Schüler-ID und Token" width="520">
+> Das Token ist wie ein Passwort. Gib es niemandem.
 
-Weitere Kinder legst du später unter **Einstellungen** → **Kind hinzufügen** an.
+**Die App findet dein Kind nicht?** Klicke in den Einstellungen auf **Kind wird nicht gefunden?** und folge dem Hinweis dort.
 
 ## Bedienung
 
@@ -107,10 +97,12 @@ Weitere Kinder legst du später unter **Einstellungen** → **Kind hinzufügen**
 4. Mit dem **Kästchen** hakst du einen Eintrag ab.
 5. Abgehakte Einträge liegen im eingeklappten Bereich **„… erledigt“**. Dort lässt sich ein Häkchen auch wieder entfernen.
 
+- Beim ersten Öffnen stehen alle Einträge seit Beginn des Schuljahres in der Übersicht. Hake ab, was schon erledigt ist. Ein kurzes Hinweisfenster erklärt das einmal und bietet an, alles, was älter als eine Woche ist, auf einmal abzuhaken. Die letzte Woche bleibt offen, weil Hausaufgaben bei beste.schule das Datum der Stunde tragen, in der sie aufgegeben wurden, nicht den Abgabetag.
 - Nur dein Häkchen verschiebt einen Eintrag. Ein Test bleibt auch nach seinem Termin offen, bis du ihn abhakst.
+- Wurde eine Stunde getauscht, steht ein Eintrag bei beste.schule manchmal im falschen Fach. Die App zeigt dann beim Fach an, was sonst in dieser Stunde liegt, zum Beispiel **EN (Stundenplanänderung, statt MA)**. Am Inhalt erkennst du, zu welchem Fach der Eintrag gehört.
 - Die Häkchen speichert die App nur auf diesem Rechner. Bei beste.schule und auf anderen Geräten sind sie nicht zu sehen.
 - Checklisten zeigt die App nur an; abhaken lassen sie sich hier nicht.
-- Oben rechts unter **Hilfe** steht eine ausführliche Anleitung mit Lösungen für häufige Probleme.
+- Oben rechts unter **Hilfe** steht eine kurze Anleitung mit Bildern und Lösungen für häufige Probleme.
 
 ## Wann werden die Daten abgerufen?
 
@@ -118,23 +110,23 @@ Solange die App läuft, holt sie die Daten beim Start und danach alle **30 Minut
 
 | Was | Zeitraum | Wie oft |
 |---|---|---|
-| Hausaufgaben, Tests, weitere Einträge, Stundenthemen | 30 Tage zurück bis 365 Tage voraus | bei jedem Abruf |
-| Hinweise vom Lehrer | vom 1. August des laufenden Schuljahres bis heute | bei jedem Abruf |
+| Hausaufgaben, Tests, weitere Einträge, Stundenthemen, Hinweise vom Lehrer | das ganze laufende Schuljahr: ab 1. August bis 365 Tage voraus | bei jedem Abruf |
 | Checklisten | alle Checklisten des Kindes | bei jedem Abruf; Einzelheiten bereits erledigter Checklisten höchstens alle 24 Stunden |
 | Deine Häkchen | nur auf diesem Rechner | sofort beim Anklicken gespeichert |
 
-Einträge, deren Unterrichtsstunde mehr als 30 Tage zurückliegt, ruft die App nicht mehr ab. Sie verschwinden dann aus der Übersicht, auch ohne Häkchen.
+Vergangene Einträge bleiben offen, bis du sie abhakst. Am 1. August beginnt ein neues Schuljahr: Dann verschwinden die Einträge des alten Schuljahres aus der Übersicht, auch ohne Häkchen.
 
 ## Daten und Datenschutz
 
 - Die App läuft nur auf diesem Rechner. Andere Geräte im Heimnetz können sie nicht aufrufen.
 - Zugangsdaten und Häkchen liegen in deinem Windows-Profil unter `%APPDATA%\AufgabenApp-BesteSchule`. Das Token ist verschlüsselt und nur mit deinem Windows-Konto lesbar.
 - Das Log liegt unter `%LOCALAPPDATA%\AufgabenApp-BesteSchule\logs\server.log`. Das Token steht nie darin.
+- Einmal am Tag fragt die App bei GitHub nach, ob es eine neue Version gibt. Dabei schickt sie keine Daten über dich oder dein Kind mit; GitHub sieht nur die IP-Adresse deines Anschlusses. Die App lädt nichts von selbst herunter.
 - Kennt jemand anderes dein Token, lösche es bei beste.schule unter **Benutzerkonto** → **API** und erstelle ein neues.
 
 ## Update und Entfernen
 
-**Update:** App beenden, das neue ZIP (nach **Zulassen**) in einen neuen Ordner entpacken und dort **Aufgaben-App starten.cmd** starten. Einstellungen und Häkchen bleiben erhalten, die Verknüpfungen zeigen danach auf den neuen Ordner. Den alten Ordner erst löschen, wenn die neue Version läuft.
+**Update:** Gibt es eine neue Version, zeigt die App oben in der Übersicht einen grünen Hinweis mit **Herunterladen**. Dann App beenden, das neue ZIP (nach **Zulassen**) in einen neuen Ordner entpacken und dort **Aufgaben-App starten.cmd** starten. Einstellungen und Häkchen bleiben erhalten, die Verknüpfungen zeigen danach auf den neuen Ordner. Den alten Ordner erst löschen, wenn die neue Version läuft.
 
 **Entfernen:** App beenden, Programmordner und Verknüpfungen löschen. Um auch Zugangsdaten, Häkchen und Log zu entfernen, zusätzlich die Ordner `AufgabenApp-BesteSchule` unter `%APPDATA%` und `%LOCALAPPDATA%` löschen.
 
